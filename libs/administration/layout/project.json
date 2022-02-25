@@ -1,0 +1,23 @@
+{
+  "root": "libs/administration/layout",
+  "sourceRoot": "libs/administration/layout/src",
+  "projectType": "library",
+  "tags": ["scope: administration", "type:layout"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/administration/layout/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/administration/layout"],
+      "options": {
+        "jestConfig": "libs/administration/layout/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

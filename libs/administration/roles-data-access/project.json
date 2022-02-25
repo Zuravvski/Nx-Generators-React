@@ -1,0 +1,25 @@
+{
+  "root": "libs/administration/roles-data-access",
+  "sourceRoot": "libs/administration/roles-data-access/src",
+  "projectType": "library",
+  "tags": ["scope:administration", "type: data-access"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/administration/roles-data-access/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/administration/roles-data-access"],
+      "options": {
+        "jestConfig": "libs/administration/roles-data-access/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

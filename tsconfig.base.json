@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -14,7 +13,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@sandbox/administration/layout": [
+        "libs/administration/layout/src/index.ts"
+      ],
+      "@sandbox/administration/roles-data-access": [
+        "libs/administration/roles-data-access/src/index.ts"
+      ],
+      "@sandbox/test": ["libs/test/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

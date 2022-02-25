@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "administration-layout": "libs/administration/layout",
+    "administration-roles-data-access": "libs/administration/roles-data-access",
     "sandbox": "apps/sandbox",
     "sandbox-e2e": "apps/sandbox-e2e"
   }

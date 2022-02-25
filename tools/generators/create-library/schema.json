@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "create-library",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Library name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "scope": {
+      "type": "string",
+      "description": "The name of the scope",
+      "x-prompt": {
+        "message": "Provide the name of the scope",
+        "type": "input"
+      }
+    },
+    "type": {
+      "type": "string",
+      "description": "Library type",
+      "enum": ["feature", "data-access", "ui", "util"],
+      "x-prompt": {
+          "message": "Which type of library would you like to generate",
+          "type": "list",
+          "items": [
+              { "value": "feature", "label": "Feature" },
+              { "value": "data-access", "label": "Data Access" },
+              { "value": "ui", "label": "UI" },
+              { "value": "util", "label": "Util" }
+          ]
+      }
+    },
+    "redux": {
+      "type": "boolean",
+      "description": "Generate redux slice",
+      "default": false
+    }
+  },
+  "required": ["name", "scope", "type"]
+}
