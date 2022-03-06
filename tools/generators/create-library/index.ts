@@ -11,7 +11,7 @@ export default async function(tree: Tree, schema: Schema) {
   validateScope(schema);
 
   if (schema.type !== 'data-access' && schema.redux) {
-    throw new Error("Only 'data-access' libraries can have Redux intgration");
+    throw new Error("Only 'data-access' libraries can have Redux integration");
   }
 
   const moduleName = getModuleName(schema).toLowerCase();
@@ -20,7 +20,7 @@ export default async function(tree: Tree, schema: Schema) {
     ...schema,
     name: moduleName,
     directory: schema.scope,
-    tags: `scope:${schema.scope}, type: ${schema.type}`,
+    tags: `scope:${schema.scope}, type:${schema.type}`,
     style: 'scss',
     linter: Linter.EsLint,
     skipFormat: true,

@@ -72,7 +72,7 @@ async function generateLayout(tree: Tree, schema: Schema): Promise<void> {
     skipTsConfig: false,
     style: 'scss',
     unitTestRunner: 'jest',
-    tags: `scope: ${schema.name}, type:layout`,
+    tags: `scope:${schema.name}, type:layout`,
     pascalCaseFiles: true,
   });
 
