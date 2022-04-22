@@ -1,4 +1,4 @@
-import { readJsonFile, Tree } from '@nrwl/devkit';
+import { readJsonFile, Tree, getWorkspaceLayout } from '@nrwl/devkit';
 import { libraryGenerator, reduxGenerator } from '@nrwl/react';
 import { Linter } from '@nrwl/linter';
 import { EsLintRc } from '../eslintrc';
@@ -33,8 +33,11 @@ export default async function(tree: Tree, schema: Schema) {
     await reduxGenerator(tree, {
       name: moduleName,
       project: `${schema.scope}-${moduleName}`,
-      directory: 'state'
+      directory: 'State'
     });
+  } else {
+    const workspaceLayout = getWorkspaceLayout(tree);
+    tree.write(`${workspaceLayout.libsDir}/${schema.scope}/${schema.name}/src/lib/.gitkeep`, '');
   }
 }
 

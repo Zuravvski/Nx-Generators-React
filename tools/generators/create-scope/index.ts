@@ -1,4 +1,6 @@
 import { Tree, updateJson } from '@nrwl/devkit';
+import { createDirectory } from '@nrwl/workspace';
+import { getWorkspaceLayout } from '@nrwl/devkit';
 import { componentGenerator, libraryGenerator } from '@nrwl/react';
 import { Linter } from '@nrwl/linter';
 import { produce } from 'immer';
@@ -16,6 +18,9 @@ export default async function (tree: Tree, schema: Schema) {
 
   if (schema.layout) {
     await generateLayout(tree, schema);
+  } else {
+    const workspaceLayout = getWorkspaceLayout(tree);
+    createDirectory(`${workspaceLayout.libsDir}/${schema.name}`);
   }
 }
 

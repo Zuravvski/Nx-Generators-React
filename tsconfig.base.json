@@ -20,6 +20,7 @@
       "@sandbox/administration/roles-data-access": [
         "libs/administration/roles-data-access/src/index.ts"
       ],
+      "@sandbox/shared/core": ["libs/shared/core/src/index.ts"],
       "@sandbox/test": ["libs/test/src/index.ts"]
     }
   },
